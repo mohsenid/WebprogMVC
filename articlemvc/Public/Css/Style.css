@@ -1,0 +1,116 @@
+
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+}
+
+/*
+   * Base structure
+   */
+
+html,
+body {
+  text-align: right !important;
+  height: 100%;
+  background-color: #333;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+/*
+   * Header
+   */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: 0.25rem ;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  /* border-bottom-color: rgba(255, 255, 255, 0.25); */
+  border-bottom-color: white;
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-right: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+/*
+   * Cover
+   */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+
+/*
+   * Footer
+   */
+.mastfoot {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+  font-size: 14px;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  padding-left: calc(1.5em + 0.75rem);
+  padding-right: 0.75rem;
+  background-position: center left calc(0.375em + 0.1875rem);
+}
+
+.was-validated textarea.form-control:invalid,
+textarea.form-control.is-invalid {
+  padding-left: calc(1.5em + 0.75rem);
+  padding-right: 0.75rem;
+  background-position: center left calc(0.375em + 0.1875rem);
+}
+
+#msg-flash {
+  font-size: 15px !important;
+}
