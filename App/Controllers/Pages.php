@@ -3,12 +3,15 @@
         public function __construct()
         {
             // echo 'Pages Load';
+            $this->articleModel = $this->model('Article');
         }
         public function index(){
             // $articles = $this->model();
+            $articles = $this->articleModel->getArticle();
             $data = [
                 'title' => 'Webprog.ir' ,
                 // 'article' => $articles
+                'articles' => $articles
             ];
             $this->view('Pages/index', $data);
         }

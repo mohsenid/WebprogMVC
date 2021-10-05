@@ -13,7 +13,7 @@
         private $dbname = DB_NAME;
 
         private $dbh;
-        private $dstmt;
+        private $stmt;
         private $error;
 
         public function __construct()
