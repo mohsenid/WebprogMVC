@@ -12,7 +12,7 @@
 
                 <div class="card-body">
 
-                    <form class="needs-validation" novalidate action="<?php echo URLROOT; ?>users/register" method="post">
+                    <form action="<?php echo URLROOT; ?>users/register" method="post">
 
                         <div class="form-group">
                             <label for="name"> Name <sup>*</sup> </label>
