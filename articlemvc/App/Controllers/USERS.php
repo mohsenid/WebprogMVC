@@ -9,6 +9,7 @@
             // Check for methode post
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Process Form
+                // die('Submit Form') test if it works
             }else{
                 // Load Form
                 //die('Load Form');
@@ -25,6 +26,25 @@
                     'confirm_password_err' => ''
                 ];
                 $this->view('users/register', $data);
+            }
+        }
+    
+        public function login() {
+            // Check for methode post
+            if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                // Process Form
+            }else{
+                // Load Form
+                //die('Load Form');
+                // Init Data
+                $data =[
+                    'email' => '',
+                    'password' => '',
+                    
+                    'email_err' => '',
+                    'password_err' => '',
+                ];
+                $this->view('users/login', $data);
             }
         }
     }

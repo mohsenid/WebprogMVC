@@ -23,7 +23,7 @@ a:hover {
 
 html,
 body {
-  text-align: right !important;
+  /* text-align: right !important; */
   height: 100%;
   background-color: #333;
 }

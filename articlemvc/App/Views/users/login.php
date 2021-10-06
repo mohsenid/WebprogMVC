@@ -12,13 +12,7 @@
 
                 <div class="card-body">
 
-                    <form class="needs-validation" novalidate action="<?php echo URLROOT; ?>users/register" method="post">
-
-                        <div class="form-group">
-                            <label for="name"> Name <sup>*</sup> </label>
-                            <input type="text" name="name" class="form-control <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['name']; ?>">
-                            <div class="invalid-feedback"> <?php echo $data['name_err'] ?> </div>
-                        </div>
+                    <form action="<?php echo URLROOT; ?>users/login" method="post">
 
                         <div class="form-group">
                             <label for="email"> Email <sup>*</sup> </label>
@@ -32,20 +26,14 @@
                             <span class="invalid-feedback"> <?php echo $data['password_err'] ?> </span>
                         </div>
 
-                        <div class="form-group">
-                            <label for="confirm_password"> Confirm Password<sup>*</sup> </label>
-                            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['confirm_password']; ?>">
-                            <span class="invalid-feedback"> <?php echo $data['confirm_password_err'] ?> </span>
-                        </div>
-
                         <div class="text-center my-4">
-                            <button class="btn btn-dark" type="submit"> Sign Up </button>
+                            <button class="btn btn-dark" type="submit"> Login </button>
                         </div>
 
                         <div class="text-center my-4">
                             <p>
-                                Already member?‌
-                                <a href="<?php echo URLROOT; ?>users/login" class="text-muted"> Login </a>
+                                Not a member?‌
+                                <a href="<?php echo URLROOT; ?>/users/register" class="text-muted"> Become a member </a>
                             </p>
                         </div>
 
