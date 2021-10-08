@@ -11,7 +11,7 @@
             <div class="card">
 
                 <div class="card-body">
-
+                    <?php flash('register_success') ?>
                     <form action="<?php echo URLROOT; ?>users/login" method="post">
 
                         <div class="form-group">

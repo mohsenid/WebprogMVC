@@ -8,6 +8,7 @@
 
     // Load Helpers
     require_once 'helpers/url_helper.php';
+    require_once 'Helpers/session_helper.php';
 
     function webprog_mvc($className){
         require_once 'Libraries/' . $className . '.php';

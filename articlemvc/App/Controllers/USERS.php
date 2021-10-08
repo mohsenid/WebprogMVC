@@ -61,6 +61,7 @@
 
                     // Register User
                     if($this->userModel->register($data)){
+                        flash('register_success', 'Welcome, You are now registered');
                        redirect('users/login');
                     }else{
                         die('Error User Registeration');
