@@ -38,4 +38,21 @@
                 return false;
             }
         }
+        // Login User
+        public function login($data){
+            $this->db->query('SELECT * FROM users WHERE email = :email');
+
+            // Bind value
+            $this->db->bind(':email', $data['email']);
+
+            // Execute
+            $row = $this->db->fetch();
+
+            $hash_password = $row->password;
+            if(password_verify( $data['password'], $hash_password)){
+                return $row;
+            }else{
+                return false;
+            }
+        }
     }

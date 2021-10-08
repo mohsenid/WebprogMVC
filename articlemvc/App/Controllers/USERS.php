@@ -108,6 +108,13 @@
                 // Validate email
                 if(empty($data['email'])){
                     $data['email_err'] = 'Please inter your Email';
+                }elseif($this->userModel->findUserByEmail($data['email'])) { // Check for user/email if this is already exist
+                    // User Found
+
+
+                }else{
+                    // User Not Found
+                    $data['email_err'] = 'The email address doesn\'t found';
                 }
                 // Validate password
                 if(empty($data['password'])){
@@ -116,7 +123,15 @@
                 // Make sure errors empty
                 if(empty($data['email_err']) && empty($data['password_err'])){
                     // Validated
-                    die('success');
+                    // die('success');
+                    $loggedInUser = $this->userModel->login($data);
+                    if($loggedInUser){
+                        // Create session
+                        die('success');
+                    }else{
+                        $data['password_err'] = 'Your Password is incorrect';
+                        $this->view('users/login', $data);
+                    }
                 }else{
                     // Load view register with errors
                     $this->view('users/login', $data);
