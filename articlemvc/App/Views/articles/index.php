@@ -4,12 +4,13 @@
 
     <?php require APPROOT . '/views/inc/navbar.php' ?>
 
+    <?php echo flash('article_message') ?>
     <div class="row text-white my-4">
         <div class="col-md-6">
             <h4>Articles</h2>
         </div>
         <div class="col-md-6 text-left">
-            <a href="<?php echo URLROOT; ?>/articles/add" class="btn btn btn-light">
+            <a href="<?php echo URLROOT; ?>/articles/add" class="btn btn-light">
                 Add Article
             </a>
         </div>
