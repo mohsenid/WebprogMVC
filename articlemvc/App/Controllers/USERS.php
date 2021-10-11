@@ -127,7 +127,8 @@
                     $loggedInUser = $this->userModel->login($data);
                     if($loggedInUser){
                         // Create session
-                        die('success');
+                        // die('success');
+                        $this->createUserSession($loggedInUser);
                     }else{
                         $data['password_err'] = 'Your Password is incorrect';
                         $this->view('users/login', $data);
@@ -149,5 +150,19 @@
                 ];
                 $this->view('users/login', $data);
             }
+        }
+        public function createUserSession($user){
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_email'] = $user->email;
+            $_SESSION['user_name'] = $user->name;
+
+            redirect('pages');
+        }
+        public function logout(){
+            unset($_SESSION['user_id']) ;
+            unset($_SESSION['user_email']) ;
+            unset($_SESSION['user_name']) ;
+            session_destroy();
+            redirect('users/login');
         }
     }
