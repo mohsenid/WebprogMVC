@@ -156,7 +156,7 @@
             $_SESSION['user_email'] = $user->email;
             $_SESSION['user_name'] = $user->name;
 
-            redirect('pages');
+            redirect('articles'); //<hich page will redirect after login
         }
         public function logout(){
             unset($_SESSION['user_id']) ;

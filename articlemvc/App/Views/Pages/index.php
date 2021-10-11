@@ -4,7 +4,7 @@
     <main role="main" class="text-center text-white" >
         <h2 class="mb-4" >Lorem ipsum dolor sit.</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, deserunt nam ratione earum ad, obcaecati laborum nobis placeat totam nisi aliquam suscipit delectus magnam aspernatur impedit ut voluptatem molestiae pariatur!</p>
-        <a href="<?php echo URLROOT; ?>users/login" class="btn btn-secondary" >login</a>
+        <a href="<?php echo URLROOT; ?>articles/index" class="btn btn-secondary" >login</a>
 
     </main>
 <!-- <h1> <?php echo $data['title'] ?> </h1> -->
