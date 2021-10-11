@@ -5,9 +5,14 @@
             if(!isLoggedIn()){
                 redirect('users/login');
             }
+            $this->articleModel = $this->model('Article');
         }
         public function index(){
-            $data = [];
+            // Get Aricle
+            $articles = $this->articleModel->getArticle();
+            $data = [
+                'articles' => $articles
+            ];
             $this->view('articles/index', $data);
         }
     }
