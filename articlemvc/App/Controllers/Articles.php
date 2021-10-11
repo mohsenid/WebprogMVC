@@ -6,6 +6,7 @@
                 redirect('users/login');
             }
             $this->articleModel = $this->model('Article');
+            $this->userModel = $this->model('User');
         }
         public function index(){
             // Get Aricle
@@ -57,5 +58,16 @@
                 ];
                  $this->view('articles/add', $data);
             }
+        }
+
+        public function show($id){
+            $article = $this->articleModel->getArticleById($id);
+            $user = $this->userModel->getUserById($article->user_id);
+
+            $data = [
+                'article' => $article,
+                'user' => $user,
+            ];
+            $this->view('articles/show', $data);
         }
     }
