@@ -131,4 +131,27 @@
             $this->view('articles/edit', $data);
             }
         }
+
+        public function delete($id)
+        {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                // Get article
+                $article = $this->articleModel->getArticleById($id);
+
+                // Check for owner
+                if ($article->user_id != $_SESSION['user_id']) {
+                    redirect('articles/index');
+                }
+
+                if ($this->articleModel->deleteArticle($id)) {
+                    flash('article_message', 'Article deleted');
+                    redirect('articles/index');
+                } else {
+                    die('Delete Article Error');
+                }
+            }else {
+            redirect('articles/index');
+            }
+        }
     }
