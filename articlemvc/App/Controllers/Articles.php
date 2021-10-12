@@ -70,4 +70,65 @@
             ];
             $this->view('articles/show', $data);
         }
+
+        public function edit($id){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'id' => $id,
+                'title' => trim($_POST['title']),
+                'body' => trim($_POST['body']),
+                'user_id' => $_SESSION['user_id'],
+                'title_err' => '',
+                'body_err' => '',
+            ];
+
+            // Validate Data
+            if (empty($data['title'])) {
+                $data['title_err'] = 'Article title field is required';
+            }
+
+            if (empty($data['body'])) {
+                $data['body_err'] = 'Article text field is required';
+            }
+
+            // Make sure no errors
+            if (empty($data['title_err']) && empty($data['body_err'])) {
+
+                if ( $this->articleModel->updateArticle($data) ) {
+
+                    flash('article_message', 'Article edited');
+                    redirect('articles/index');
+
+                } else {
+                    die('udate article error');
+                }
+
+            } else {
+                // Load view with error
+                $this->view('articles/edit', $data);
+            }
+            } else {
+
+            // Get article
+            $article = $this->articleModel->getArticleById($id);
+
+            // Check for owner
+            if ($article->user_id != $_SESSION['user_id']) {
+                redirect('articles/index');
+            }
+
+            $data = [
+                'id' => $id,
+                'title' => $article->title,
+                'body' => $article->body,
+                'title_err' => '',
+                'body_err' => ''
+            ];
+
+            $this->view('articles/edit', $data);
+            }
+        }
     }
