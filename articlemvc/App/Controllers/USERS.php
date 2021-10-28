@@ -26,11 +26,11 @@
                 ];
                 // Validate Name
                 if(empty($data['name'])){
-                    $data['name_err'] = 'Please inter your Name';
+                    $data['name_err'] = 'Please enter your name';
                 }
                 // Validate email
                 if(empty($data['email'])){
-                    $data['email_err'] = 'Please inter your Email';
+                    $data['email_err'] = 'Please enter your email';
                 }else{
                     // Check Email if already excist
                     if($this->userModel->findUserByEmail($data['email'])){
@@ -39,16 +39,16 @@
                 }
                 // Validate password
                 if(empty($data['password'])){
-                    $data['password_err'] = 'Please inter your Password';
+                    $data['password_err'] = 'Please enter your password';
                 }elseif(strlen($data['password']) < 6){
-                    $data['password_err'] = 'The Password field must be at least 6 characters.';
+                    $data['password_err'] = 'Password field must be at least 6 characters.';
                 }
 
                 // Validate confirm password
                 if(empty($data['password'])){
-                    $data['confirm_password_err'] = 'Please confirm your Password';
+                    $data['confirm_password_err'] = 'Please confirm your password';
                 }elseif($data['password'] != $data['confirm_password']){
-                    $data['confirm_password_err'] = 'The confirm Password confirmation does not match.';
+                    $data['confirm_password_err'] = 'Password confirmation does not match.';
                 }
 
                 // Make sure errors empty
@@ -61,10 +61,10 @@
 
                     // Register User
                     if($this->userModel->register($data)){
-                        flash('register_success', 'Welcome, You are now registered');
+                        flash('register_success', 'Welcome, you are now registered');
                        redirect('users/login');
                     }else{
-                        die('Error User Registeration');
+                        die('Error user registration');
                     }
                 }else{
                     // Load view register with errors
@@ -107,18 +107,18 @@
 
                 // Validate email
                 if(empty($data['email'])){
-                    $data['email_err'] = 'Please inter your Email';
+                    $data['email_err'] = 'Please enter your Email';
                 }elseif($this->userModel->findUserByEmail($data['email'])) { // Check for user/email if this is already exist
                     // User Found
 
 
                 }else{
                     // User Not Found
-                    $data['email_err'] = 'The email address doesn\'t found';
+                    $data['email_err'] = 'Email address not found';
                 }
                 // Validate password
                 if(empty($data['password'])){
-                    $data['password_err'] = 'Please inter your Password';
+                    $data['password_err'] = 'Please enter your password';
                 }
                 // Make sure errors empty
                 if(empty($data['email_err']) && empty($data['password_err'])){
@@ -130,7 +130,7 @@
                         // die('success');
                         $this->createUserSession($loggedInUser);
                     }else{
-                        $data['password_err'] = 'Your Password is incorrect';
+                        $data['password_err'] = ' Wrong password';
                         $this->view('users/login', $data);
                     }
                 }else{

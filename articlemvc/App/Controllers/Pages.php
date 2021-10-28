@@ -9,7 +9,7 @@
             // $articles = $this->model();
             // $articles = $this->articleModel->getArticle();
             $data = [
-                'title' => 'Webprog.ir' ,
+                'title' => 'CRUD' ,
                 // 'article' => $articles
                 
             ];

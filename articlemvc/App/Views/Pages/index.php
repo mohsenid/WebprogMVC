@@ -2,7 +2,8 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <?php require APPROOT . '/Views/inc/navbar.php' ?>
     <main role="main" class="text-center text-white" >
-        <h2 class="mb-4" >Lorem ipsum dolor sit.</h2>
+        <h2 class="mb-4" >Bienvenue sur mon blog !</h2>
+        <p> Celui-ci a été réalisé via PHP via une architecture MVC Orienté objet.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, deserunt nam ratione earum ad, obcaecati laborum nobis placeat totam nisi aliquam suscipit delectus magnam aspernatur impedit ut voluptatem molestiae pariatur!</p>
         <a href="<?php echo URLROOT; ?>articles/index" class="btn btn-secondary" >login</a>
 
